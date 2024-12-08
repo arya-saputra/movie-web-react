@@ -1,2 +1,2 @@
 # movie-web-react
-Arya's Fake Movie Streaming Platform
+M. Arya Yudha S's Fake Movie Streaming Platform
