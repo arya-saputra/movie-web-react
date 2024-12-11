@@ -1,4 +1,5 @@
 import Logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 // Functional Component
 const Greeting = () => {
@@ -10,10 +11,12 @@ const Greeting = () => {
                 </svg>
             </div>
             <div className="logo w-[33%] lg:w-[20%]">
-                <img src={Logo} className="w-[100%] lg:w-[30%]" alt="logo" />
+                <Link to="/">
+                    <img src={Logo} className="w-[100%] lg:w-[30%]" alt="logo" />
+                </Link>
             </div>
             <div className="hidden lg:flex text-[16px] text-[white] gap-6 w-[60%] justify-center">
-                <a href="https://google.com" className="transition-all hover:text-[black]">Home</a>
+                <Link to="/" className="transition-all hover:text-[black]">Home</Link>
                 <a href="https://gmail.com" className="transition-all hover:text-[black]">Explore</a>
                 <a href="https://gmail.com" className="transition-all hover:text-[black]">Popular</a>
                 <a href="https://youtube.com" className="transition-all hover:text-[black]">Watchlist</a>
