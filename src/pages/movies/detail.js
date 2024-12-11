@@ -32,29 +32,31 @@ const Detail = () => {
     },[id]);
     // console.log(movie.Trailer);
     return(
-        <div className='min-h-[89vh] bg-[#222]'>
-            <div className='hero-section h-[65vh] relative overflow-hidden flex'>
-                <div className='relative w-1/2 z-[120] p-3 flex items-center justify-center'>
-                    <iframe className='w-[95%] h-[80%]' src={youtube_parser(movie.Trailer)} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div className='min-h-[89vh] bg-[#222] py-4 lg:py-0'>
+            <div className='hero-section lg:h-[65vh] relative overflow-hidden flex flex-wrap lg:flex-nowrap'>
+                <div className='relative w-full lg:w-1/2 z-[120] lg:p-3 flex items-center justify-center flex-wrap'>
+                    
+                    <h3 className='text-[60px] font-[800] leading-[1em] mb-4 lg:hidden text-[white] drop-shadow-xl'>{movie.Title}</h3>
+                    <iframe className='w-[95%] h-[30vh] lg:h-[80%]' src={youtube_parser(movie.Trailer)} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
-                <div className='relative w-1/2 z-[120] text-left text-white flex items-center justify-center'>
-                    <div className='w-[60%]'>
-                        <h3 className='text-[46px] font-[800]'>{movie.Title}</h3>
-                        <h4 className='text-[12px] mt-[-3px]'>{movie.Year} | {movie.Genre}</h4>
+                <div className='relative w-full lg:w-1/2 z-[120] text-left text-white flex items-center justify-center p-3 '>
+                    <div className='w-full lg:w-[60%]'>
+                        <h3 className='text-[46px] font-[800] hidden lg:block'>{movie.Title}</h3>
+                        <h4 className='text-[12px] mt-[5%] lg:mt-[-3px]'>{movie.Year} | {movie.Genre}</h4>
                         <p className='mt-[4%] leading-[2em] w-[80%]'>{movie.Plot}</p>
                         <h4 className='text-[16px] font-bold mt-4'>{movie.Director}</h4>
                     </div>
                 </div>
-                <div className='bg-grad-1 h-full absolute z-[100] w-full top-0 right-0 flex items-center justify-end px-4 '>
+                <div className='bg-grad-1 h-full absolute z-[100] w-full top-0 right-0 lg:flex items-center justify-end px-4 '>
                     
                 </div>
-                <img src={movie.Poster} alt={movie.Title} className='w-3/4 absolute left-0 top-0 z-[1]' />
+                <img src={movie.Poster} alt={movie.Title} className='w-full lg:w-3/4 absolute left-0 top-0 z-[1]' />
             </div>
             <div className='detail-section py-[5%] text-white'>
                 <h3 className='text-[32px] font-bold'>Movie Details</h3>
 
-                <div className='flex mx-auto w-full max-w-[1200px] mt-[3%] gap-3'>
-                    <div className='w-1/2'>
+                <div className='flex mx-auto w-full max-w-[1200px] mt-[3%] gap-3 flex-wrap lg:flex-nowrap'>
+                    <div className='w-full lg:w-1/2'>
                         <div class="relative overflow-x-auto">
                             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                 <tbody>
@@ -129,7 +131,7 @@ const Detail = () => {
                             </table>
                         </div>
                     </div>
-                    <div className='w-3/4 flex overflow-x-scroll rounded'>
+                    <div className='w-full mt-4 lg:mt-0 lg:w-3/4 flex overflow-x-scroll rounded'>
                         {
                             movie.Images? (
                                 movie.Images.map((item) => {

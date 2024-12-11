@@ -26,3 +26,10 @@ code {
 .font-heavy {
   font-weight: 800;
 }
+
+@media only screen and (max-width:719px) {
+  .bg-grad-1 {
+    background: rgb(196,138,138);
+    background: linear-gradient(180deg, rgba(196,138,138,0.0018601190476190688) 24%, rgb(36, 34, 34) 71%);
+  }
+}

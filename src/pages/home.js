@@ -9,7 +9,7 @@ function Popular(){
   const moviesData = Movies;
   const elData = moviesData.map((data,i) => {
     return (
-      <div className='group w-[49.2%] lg:w-[19.3%] h-[350px] bg-[#333] mb-4 text-[white] overflow-hidden rounded-lg relative cursor-pointer' key={i}>
+      <div id='popular' className='group w-[49.2%] lg:w-[19.3%] h-[350px] bg-[#333] mb-4 text-[white] overflow-hidden rounded-lg relative cursor-pointer' key={i}>
         <div className='absolute transition-all bg-[#B22222] w-full h-full top-[100%] flex justify-center items-center group-hover:top-0'>
           <div>
             <p className='mb-4 w-[100%] mx-auto font-bold'>{data.Title}</p>

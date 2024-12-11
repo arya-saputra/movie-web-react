@@ -1,8 +1,16 @@
 import Logo from "../assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
+const scrollPop = () => {
+    const popularDiv = document.getElementById("popular");
+    window.scrollTo({
+        top: popularDiv.scrollHeight,
+        behavior: 'smooth'
+    })
+}
 // Functional Component
 const Greeting = () => {
+    const route = useLocation();
     return (
         <div className="fixed top-0 left-0 w-full bg-[#B22222] flex justify-between px-3 py-3 items-center z-[999] shadow-lg">
             <div className="lg:hidden">
@@ -17,10 +25,12 @@ const Greeting = () => {
             </div>
             <div className="hidden lg:flex text-[16px] text-[white] gap-6 w-[60%] justify-center">
                 <Link to="/" className="transition-all hover:text-[black]">Home</Link>
-                <a href="https://gmail.com" className="transition-all hover:text-[black]">Explore</a>
-                <a href="https://gmail.com" className="transition-all hover:text-[black]">Popular</a>
-                <a href="https://youtube.com" className="transition-all hover:text-[black]">Watchlist</a>
-                <a href="https://facebook.com" className="transition-all hover:text-[black]">My Account</a>
+                {
+                    route.pathname=='/'? (<span className="transition-all hover:text-[black]" onClick={scrollPop}>Popular</span>):(<Link to="/#popular" className="transition-all hover:text-[black]">Popular</Link>)
+                }
+                <a href="https://aryasaputra.my.id" className="transition-all hover:text-[black]">Explore</a>
+                <a href="https://github.com/arya-saputra/movie-web-react" className="transition-all hover:text-[black]">Repo</a>
+                <a href="https://github.com/arya-saputra" className="transition-all hover:text-[black]">Github</a>
             </div>
             <div className="header-search hidden lg:block lg:w-[20%]">
                 <input type="text" placeholder="Search" className="bg-[#5E1914] border-0 p-2 outline-0 text-white w-full rounded-lg" />

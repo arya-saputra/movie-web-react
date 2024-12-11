@@ -1,7 +1,7 @@
 const hero = () => {
     return (
         <div className="hero group relative h-[70vh] overflow-hidden">
-            <div className="absolute right-[-20px] top-0 w-[80%] opacity-0 h-full bg-grad-1 transition-all group-hover:right-0 group-hover:opacity-[1] flex justify-end items-end pb-[5%]">
+            <div className="absolute right-[-20px] top-0 w-[80%] opacity-0 h-full bg-grad-1 transition-all group-hover:right-0 group-hover:opacity-[1] hidden lg:flex justify-end items-end pb-[5%]">
                 <div className="w-[40%] py-3 text-[white] text-left">
                     <h3 className="text-[3rem] font-heavy">Downton <span className="bg-[red] px-2">Abbey</span></h3>
                     <p>2011 | Drama</p>
